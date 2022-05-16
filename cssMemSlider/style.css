@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(226, 223, 223);
+  /* overflow: hidden; */
+}
+
+.header {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.slider {
+  width: 50vw;
+  margin: 0 auto;
+  display: grid;
+  border: .3rem solid rgb(151, 146, 146);
+  border-radius: 1rem;
+  grid-template-areas:
+    "img img img"
+    "text text button"
+}
+
+.input {
+  display: none;
+}
+
+.slide {
+  width: 50vw;
+  overflow-x: hidden;
+  grid-area: img;
+}
+
+.slide__wrap {
+  width: 200vw;
+  display: flex;
+}
+
+.slide__image {
+  max-width: 50vw;
+  transition: all .6s ease;
+}
+
+.slide__item {
+  width: 100%;
+  object-fit: cover;	
+}
+
+.slider__text{
+  overflow-x: hidden;
+  grid-area: text;
+  align-self: center;
+}
+
+.text__wrap {
+  width: 200vw;
+  display: flex;
+}
+
+.text__item {
+  width: 50vw;
+  transition: all .6s ease;
+  font-size: 1rem;
+}
+
+.slider__nav {
+  height: 2rem;
+  grid-area: button;
+}
+
+.slider__nav {
+  width: 6rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav__dot {
+  cursor: pointer;
+  margin: auto;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;}
+
+.dot__item {
+  border-radius: 50%;
+  background-color: #6f4ec7;
+  border: 0.2rem solid #6f4ec7;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 auto;
+}
+
+.nav__dot:hover .dot__item {
+  background: #ffffff;
+  border:0.2rem solid #ffffff;
+}
+
+.nav__dot:active .dot__item {
+  background: #6e4ec7a9;
+  border: 0.2rem solid #6e4ec7a9;
+}
+
+#dot1:checked ~ .slide .show{
+  margin-left: 0;
+}
+
+#dot1:checked ~ .text .show{
+  margin-left: 0;
+}
+
+#dot1:checked ~ .slider__nav .dot1{
+  background-color: transparent;  
+}
+
+#dot2:checked ~ .slide .show{
+  margin-left: -25%;
+}
+
+#dot2:checked ~ .text .show{
+  margin-left: -25%;
+}
+
+#dot2:checked ~ .slider__nav .dot2{
+  background-color: transparent;  
+}
+
+#dot3:checked ~ .slide .show{
+  margin-left: -50%;
+}
+
+#dot3:checked ~ .text .show{
+  margin-left: -50%;
+}
+
+#dot3:checked ~ .slider__nav .dot3{
+  background-color: transparent;  
+}
+
+#dot4:checked ~ .slide .show{
+  margin-left: -75%;
+}
+
+#dot4:checked ~ .text .show{
+  margin-left: -75%;
+}
+
+#dot4:checked ~ .slider__nav .dot4{
+  background-color: transparent;  
+}
