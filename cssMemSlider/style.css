@@ -9,6 +9,7 @@
   box-sizing: border-box;
   background-color: rgb(226, 223, 223);
   overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header {
@@ -23,6 +24,7 @@
   border: .3rem solid rgb(151, 146, 146);
   border-radius: .5rem;
   display: grid;
+  grid-row-gap: .7rem;
   grid-template-areas:
     "img img img"
     "text text button"
@@ -109,8 +111,8 @@
 }
 
 .nav__dot:active .dot__item {
-  background: #6e4ec7a9;
-  border: 0.2rem solid #6e4ec7a9;
+  background: #ffffff7a;
+  border: 0.2rem solid #ffffff7a;
 }
 
 #dot1:checked ~ .slide .show{
