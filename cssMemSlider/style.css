@@ -8,7 +8,7 @@
   height: 100vh;
   box-sizing: border-box;
   background-color: rgb(226, 223, 223);
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .header {
@@ -20,9 +20,9 @@
 .slider {
   width: 50vw;
   margin: 0 auto;
-  display: grid;
   border: .3rem solid rgb(151, 146, 146);
-  border-radius: 1rem;
+  border-radius: .5rem;
+  display: grid;
   grid-template-areas:
     "img img img"
     "text text button"
@@ -54,6 +54,7 @@
 }
 
 .slider__text{
+  width: calc(50vw - 6rem);
   overflow-x: hidden;
   grid-area: text;
   align-self: center;
@@ -65,9 +66,13 @@
 }
 
 .text__item {
-  width: 50vw;
+  width: 100%;
   transition: all .6s ease;
   font-size: 1rem;
+}
+
+.text__item > p {
+  max-width: 33vw;
 }
 
 .slider__nav {
@@ -125,7 +130,7 @@
 }
 
 #dot2:checked ~ .text .show{
-  margin-left: -25%;
+  margin-left: -33%;
 }
 
 #dot2:checked ~ .slider__nav .dot2{
@@ -137,7 +142,7 @@
 }
 
 #dot3:checked ~ .text .show{
-  margin-left: -50%;
+  margin-left: -100%;
 }
 
 #dot3:checked ~ .slider__nav .dot3{
@@ -149,9 +154,31 @@
 }
 
 #dot4:checked ~ .text .show{
-  margin-left: -75%;
+  margin-left: -300%;
 }
 
 #dot4:checked ~ .slider__nav .dot4{
   background-color: transparent;  
+}
+
+@media only screen and (max-width: 600px) {
+  .slider {
+    gap: 0.5rem;
+    grid-template-areas:
+      "img img img"
+      "text text text"
+      "button button button"
+  }
+  .slider__text{
+    width: 100%;
+  }
+
+  .text__item > p {
+    font-size: .8rem;
+    width: 100%;
+  }
+
+  .slider__nav {
+    margin: 0 auto;
+  }
 }
